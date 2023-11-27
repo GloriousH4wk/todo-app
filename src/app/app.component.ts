@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Model } from './model';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,12 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'todoApp';
-  user = 'Kaan';
-  items = [
-    { description: 'Buy groceries for Breakfast', action: 'no' },
-    { description: 'Buy cinema tickets', action: 'no' },
-    { description: 'Go to the gym', action: 'no' },
-    { description: 'write a invoice', action: 'no' },
-  ];
+  model = new Model()
+
+  getName() {
+    return this.model.user
+  }
+  getItems() {
+    return this.model.items
+  }
 }
